@@ -6,7 +6,7 @@
   <title>Ação Limpa Nome - Simulação WhatsApp</title>
   <style>
     body {
-      font-family: Arial, sans-serif;
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif;
       background-color: #ece5dd;
       display: flex;
       justify-content: center;
@@ -16,20 +16,43 @@
     }
 
     .chat-container {
-      width: 360px;
+      width: 390px;
       background-color: #ffffff;
-      border: 1px solid #ccc;
       border-radius: 10px;
-      box-shadow: 0 0 10px rgba(0,0,0,0.1);
+      box-shadow: 0 0 20px rgba(0,0,0,0.1);
       overflow: hidden;
       position: relative;
+      border: 1px solid #ccc;
     }
 
     .chat-header {
       background-color: #075e54;
       color: white;
       padding: 10px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .chat-header img {
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+    }
+
+    .chat-header .info {
+      display: flex;
+      flex-direction: column;
+    }
+
+    .chat-header .info .name {
       font-weight: bold;
+      font-size: 16px;
+    }
+
+    .chat-header .info .status {
+      font-size: 12px;
+      color: #cfd8dc;
     }
 
     .chat-messages {
@@ -37,27 +60,40 @@
       display: flex;
       flex-direction: column;
       gap: 10px;
-      height: 400px;
+      height: 420px;
       overflow-y: auto;
-      background-color: #e5ddd5;
+      background-image: url('https://e0.pxfuel.com/wallpapers/722/149/desktop-wallpaper-message-background-whatsapp-message-background.jpg');
+      background-size: cover;
     }
 
     .msg {
       max-width: 75%;
-      padding: 10px;
-      border-radius: 7px;
+      padding: 10px 15px;
+      border-radius: 7.5px;
       font-size: 14px;
       line-height: 1.4;
+      position: relative;
+      display: inline-block;
+    }
+
+    .msg::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      width: 0;
+      height: 0;
     }
 
     .msg.bot {
       align-self: flex-start;
-      background-color: white;
+      background-color: #ffffff;
+      border-top-left-radius: 0;
     }
 
     .msg.user {
       align-self: flex-end;
       background-color: #dcf8c6;
+      border-top-right-radius: 0;
     }
 
     .chat-footer {
@@ -76,13 +112,18 @@
       cursor: pointer;
       text-decoration: none;
       display: inline-block;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
     }
   </style>
 </head>
 <body>
   <div class="chat-container">
     <div class="chat-header">
-      Positivo Nacional Ação Limpa Nome ✅
+      <img src="https://raw.githubusercontent.com/tatianemsimao/positivonacional/refs/heads/main/SIMBOLO%20P%20-%20Positivo%20Nacional%20(avatar).png" alt="Foto de perfil">
+      <div class="info">
+        <div class="name">Positivo Nacional ✅</div>
+        <div class="status">online</div>
+      </div>
     </div>
     <div class="chat-messages" id="chat">
       <!-- Mensagens vão aparecer aqui -->
